@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Ланч — Тот Ещё Гусь | Гастрокафе">
+<meta property="og:description" content="Винный гастроресторан с характером на Павелецкой">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dinner.totgoose.ru">
+<meta property="og:image" content="https://dinner.totgoose.ru/dinner.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<title>Меню — Тот Ещё Гусь | Гастрокафе</title>
+<link rel="icon" href="https://Тот-Ещё-Гусь.РФ/img/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f5;
+  --text: #1a1a1a;
+  --text-muted: #6b6560;
+  --text-light: #9a948e;
+  --accent: #8b7355;
+  --border: #e0d8cf;
+  --border-light: #ece6de;
+  --card: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 3rem 1.5rem 1.5rem;
+}
+.header-sub {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.header-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+.header-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+.header-line {
+  width: 40px; height: 1px;
+  background: var(--accent);
+  margin: 1.25rem auto;
+  opacity: 0.4;
+}
+.header-address {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ===== NAV ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,245,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0.5rem 0;
+}
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.nav-btn {
+  padding: 0.35rem 0.85rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.nav-btn:hover { color: var(--text); background: var(--border-light); }
+.nav-btn.active { color: var(--card); background: var(--accent); }
+
+/* ===== SECTION ===== */
+.section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+.section:not(:last-child) {
+  border-bottom: 1px solid var(--border-light);
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ===== DISH ===== */
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px dotted var(--border);
+}
+.dish:last-child { border-bottom: none; }
+.dish-left { flex: 1; min-width: 0; }
+.dish-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+.dish-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 300;
+}
+.dish-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem 3rem;
+  border-top: 1px solid var(--border-light);
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.footer-text {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .dish { flex-direction: column; gap: 0.2rem; }
+  .dish-price { align-self: flex-start; }
+  .section { padding: 2rem 1rem; }
+  .nav-inner { gap: 0.15rem; }
+  .nav-btn { padding: 0.3rem 0.6rem; font-size: 0.6rem; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.tm-menu-wrapper {
+   font-family: 'Cormorant Garamond', serif;
+   font-size: 22px;
+    max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+        
+        line-height: 1.5;
+
+/* Заголовки разделов */
+.tm-section-title {
+    font-family: 'Cormorant Garamond', serif;
+	font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+	color: #8b0000;
+    letter-spacing: 1px;
+    margin: 40px 0 20px 0;
+    padding-bottom: 20px;
+   /*  border-bottom: 2px solid #8b0000;*/
+    text-align: center;
+}
+/* Typography */
+    .wl-main-title {
+        text-align: center;
+        font-size: 36px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+        color: #000;
+        padding-bottom: 20px;
+}		
+.tm-subsection-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 15px 0;
+    color: #555;
+    text-align: left;
+}
+
+/* Карточка блюда */
+.tm-item {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Верхняя часть: Название и Цена */
+.tm-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    
+    flex-wrap: wrap;
+}
+
+.tm-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 15px;
+    color: #000;
+}
+
+.tm-item-price {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #000;
+}
+
+/* Описание блюда */
+.tm-item-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Специальный блок для цен обеда */
+.tm-lunch-price-box {
+    text-align: center;
+    border: 2px solid #8b0000;
+    padding: 20px;
+    margin: 30px 0;
+	border-radius: 15px;
+    background-color: #fafafa;
+}
+
+.tm-lunch-price-main {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.tm-lunch-price-note {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 640px) {
+    .tm-menu-wrapper {
+        padding: 15px;
+    }
+    .tm-section-title {
+        font-size: 20px;
+    }
+    .tm-item-header {
+        flex-direction: row;
+    }
+    .tm-item-name {
+        font-size: 16px;
+        flex: 1 1 auto;
+    }
+    .tm-item-price {
+        font-size: 16px;
+        flex: 0 0 auto;
+    }
+    .tm-item-desc {
+        font-size: 13px;
+    }
+    .tm-lunch-price-main {
+        font-size: 18px;
+    }
+	
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">Гастрокафе "Тот ещё Гусь"</div>
+  <h1 class="header-title"><em>Ланч_</em>Того Ещё Гуся</h1>
+  <div class="header-line"></div>
+  <div class="header-address">Москва, Валовая, 26</div>
+</div>
+<div class="tm-menu-wrapper">
+<div class="tm-lunch-price-box">
+    <div class="tm-lunch-price-main">Одно(ONE) блюдо на выбор + бокал вина (150мл.) — 890 ₽</div>
+    <div class="tm-lunch-price-main">Два(TWO)блюда на выбор + бокал вина (150мл.) — 1290 ₽</div>
+	<div class="tm-lunch-price-main">Вино:</div>
+	<div class="tm-lunch-price-main">Белое — Perdeberg Cellar Chenin Blanc South Africa</div>
+    <div class="tm-lunch-price-main">Красное — «Vranac» Respublika Srbija</div>
+	<div class="tm-lunch-price-note">*Вино может меняться в зависимости от дня</div>
+    <div class="tm-lunch-price-note">*по Вашему желанию вино может быть заменено на любой чай, эспрессо, американо, воду без газа или ягодный морс</div>
+</div>
+
+
+<h2 class="tm-section-title">Супы</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Окрошка</h3>
+    </div>
+    <p class="tm-item-desc">Классический набор из овощей с цыпленком на квасе или кефире</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Буйабес</h3>
+    </div>
+    <p class="tm-item-desc">Рыбный суп на томатной основе с лососем, Кальмаром и гренками из французского багета.</p>
+</div>
+
+<!-- Section 2: Холодные блюда -->
+
+<h2 class="tm-section-title">Холодные блюда</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Салат с лисичками</h3>
+    </div>
+    <p class="tm-item-desc">Маринованные лисички, Грана Падано, тонкие слайсы моркови, микс салат, вяленные томаты.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Малый зеленый салат</h3>
+    </div>
+    <p class="tm-item-desc">Из разных листьев салата, цуккини, стручковой фасоли, брокколи, огурцов с заправкой в азиатском стиле и семенами тыквы, подсолнуха и кунжута.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Салат Цезарь</h3>
+    </div>
+    <p class="tm-item-desc">Классический, первозданный рецепт салата с листьями Романо, соусом из анчоусов и крошкой из хрустящего бекона. Без курицы (!!!)</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Паштет из говяжьей печени</h3>
+    </div>
+    <p class="tm-item-desc">Подается со сливочным эспуме из белых грибов.</p>
+</div>
+
+<!-- Section 3: Горячие блюда -->
+
+<h2 class="tm-section-title">Горячие блюда</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Пенне «Альфредо»</h3>
+    </div>
+    <p class="tm-item-desc">Паста с цыпленком в сливочно-грибном соусе.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Пенне с лососем</h3>
+    </div>
+    <p class="tm-item-desc">Паста со сливочным кремом из брокколи и лососем.</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Фиш кейк</h3>
+    </div>
+    <p class="tm-item-desc">Сочные котлетки из морепродуктов с соусом дзадзики. </br>Подаются с картофельным пюре и брокколи..</p>
+</div>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Печень по-строгановски</h3>
+    </div>
+    <p class="tm-item-desc">Говяжья печень, тушеная в сметано-томатном соусе. </br>Подается с картофельным пюре и битыми огурцами.</p>
+</div>
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Бёф Бургиньон</h3>
+    </div>
+    <p class="tm-item-desc">Из говяжей голени долгого томления с овощами в темном стауте.</br> Подается с картофелем, морковью и грибами.</p>
+</div>
+<!-- Section 4: Десерт -->
+
+<h2 class="tm-section-title">Десерт</h2>
+
+<div class="tm-item">
+    <div class="tm-item-header">
+        <h3 class="tm-item-name">Конфеты ручной работы «Шоколадный трюфель»</h3>
+        <span class="tm-item-price">250 ₽</span>
+    </div>
+</div>
+
+<div class="footer">
+  <div class="footer-name">Тот Ещё Гусь</div>
+  <div class="footer-text">ГАСТРОКАФЕ · МОСКВА</div>
+</div>
+</div>
+
+
+</body>
+</html>
